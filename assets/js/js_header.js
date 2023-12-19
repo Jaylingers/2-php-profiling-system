@@ -1,6 +1,6 @@
 function signin() {
 
-    window.location.href = "/2-php-profiling/page/signin";
+    window.location.href = "/2-php-profiling-system/page/signin";
 }
 
 // Get the modal

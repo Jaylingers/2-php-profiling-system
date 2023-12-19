@@ -9,7 +9,7 @@ include "../../db_conn.php";
 
 // Check user type in the session
 if (!isset($_SESSION['user_type'])) {
-    header("Location: /2-php-profiling/admins_page/404");
+    header("Location: /2-php-profiling-system/admins_page/404");
 } else {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_type'])) {
     if (isset($_POST['logout'])) {
         unset($_SESSION['user_type']); // remove it now we have used it
         unset($_SESSION['ids']); // remove it now we have used it
-        header("Location: /2-php-profiling/");
+        header("Location: /2-php-profiling-system/");
     }
 //    if (isset($_POST['changePass'])) {
 //        $changePass = $_POST['changePass'];
@@ -92,27 +92,27 @@ if (!isset($_SESSION['user_type'])) {
         </h1>
     </div>
     <div class="navbar">
-        <a href="/2-php-profiling/page/home/?id=<?php echo $_GET['id'] ?>"
+        <a href="/2-php-profiling-system/page/home/?id=<?php echo $_GET['id'] ?>"
            class="<?php if ($var === "home") { ?> active  <?php } ?>">
             <span class="material-icons-sharp">home</span>
             <h3 style="color: white !important;">Home</h3>
         </a>
-        <a href="/2-php-profiling/page/about_us/?id=<?php echo $_GET['id'] ?>"
+        <a href="/2-php-profiling-system/page/about_us/?id=<?php echo $_GET['id'] ?>"
            class="<?php if ($var === "about_us") { ?> active  <?php } ?>">
             <span class="material-icons-sharp">today</span>
             <h3 style="color: white !important;">About Us</h3>
         </a>
-        <a href="/2-php-profiling/page/barangay_official/?id=<?php echo $_GET['id'] ?>"
+        <a href="/2-php-profiling-system/page/barangay_official/?id=<?php echo $_GET['id'] ?>"
            class="<?php if ($var === "barangay_official") { ?> active  <?php } ?>">
             <span class="material-icons-sharp">grid_view</span>
             <h3 style="color: white !important;">Barangay Official</h3>
         </a>
-        <a href="/2-php-profiling/page/records/?id=<?php echo $_GET['id'] ?>"
+        <a href="/2-php-profiling-system/page/records/?id=<?php echo $_GET['id'] ?>"
            class="<?php if ($var === "records") { ?> active  <?php } ?>">
             <span class="material-icons-sharp">password</span>
             <h3 style="color: white !important;">Records</h3>
         </a>
-        <a href="/2-php-profiling/page/logout/?id=<?php echo $_GET['id'] ?>"
+        <a href="/2-php-profiling-system/page/logout/?id=<?php echo $_GET['id'] ?>"
            class="<?php if ($var === "logout") { ?> active  <?php } ?>">
             <span class="material-icons-sharp" onclick="">logout</span>
             <h3 style="color: white !important;">Logout</h3>

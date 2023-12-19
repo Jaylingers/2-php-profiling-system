@@ -35,10 +35,10 @@ if (isset($_POST['login'])) {
 //        mysqli_query($conn, $sqlInsertPageVisited);
 
         if (strtolower($user_type) == 'user') {
-            header("Location: /2-php-profiling/page/home?id=" . $row['id']);
+            header("Location: /2-php-profiling-system/page/home?id=" . $row['id']);
         }
     } else {
-        header("Location: /2-php-profiling/?error=$user_data");
+        header("Location: /2-php-profiling-system/?error=$user_data");
     }
 }
 
@@ -48,7 +48,7 @@ if (isset($_SESSION['user_type'])) {
     $id = $_SESSION['ids'];
     echo "<script> alert('$userType')</script>";
     if (strtolower($userType) == 'user') {
-        header("Location: /2-php-profiling/page/home?id=" . $id);
+        header("Location: /2-php-profiling-system/page/home?id=" . $id);
     }
 }
 ?>

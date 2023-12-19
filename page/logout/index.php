@@ -7,7 +7,7 @@ if (isset($_POST['logout1'])) {
     unset($_SESSION['ids']); // remove it now we have used it
     echo '<script>';
     echo '   
-                history.pushState({page: "another page"}, "another page", "/2-php-profiling");
+                history.pushState({page: "another page"}, "another page", "/2-php-profiling-system");
                 window.location.reload();
             ';
     echo '</script>';
