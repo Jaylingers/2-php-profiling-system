@@ -154,6 +154,9 @@
         transition: all 0.5s ease;
         display: block !important;
     }
+    .top-header{
+        background: white !important;
+    }
 }
 
 .m-t-10em{
@@ -161,15 +164,16 @@
 }
 .navbar{
     transition: all 0.5s ease;
-    display: none;
     position: fixed;
     width: 100%;
+    margin-top: 8em;
+    background: #ffffffbd;
 }
 .navbar-active{
     position: fixed;
     z-index: 9;
     width: 100%;
-    margin-top: 18em;
+    margin-top: 18.7em;
     transition: all 0.5s ease;
 }
 .top-header{
@@ -180,4 +184,5 @@
     z-index: 99;
     transition: all 1s ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #ffffffbd;
 }
