@@ -105,7 +105,7 @@ b {
   width: 94%;
   margin: 0 3rem;
   gap: 1.8rem;
-  grid-template-columns: 15rem auto 7rem;
+  grid-template-columns: 15rem auto;
   padding-top: 4rem;
   height: 90vh;
 }

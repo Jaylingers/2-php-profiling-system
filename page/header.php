@@ -13,8 +13,7 @@ if (!isset($_SESSION['user_type'])) {
 } else {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $sql = "SELECT ui.id AS idUI, ui.*, pi.* FROM users_info ui LEFT JOIN persons_info pi ON pi.id = ui.person_id
-                WHERE ui.id='$id'";
+        $sql = "SELECT * FROM admin_info WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
         $rows = mysqli_fetch_assoc($result);
     }
@@ -48,7 +47,7 @@ if (!isset($_SESSION['user_type'])) {
         $darkMode = $_POST['darkMode'];
         $id = $_POST['id'];
 
-        $sql = "UPDATE users_info SET dark_mode='$darkMode' WHERE id='$id'";
+        $sql = "UPDATE admin_info SET dark_mode='$darkMode' WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
 
         // Update dark mode session
@@ -57,7 +56,7 @@ if (!isset($_SESSION['user_type'])) {
 
     $id = $_GET['id'];
     // Fetch dark mode setting from the database
-    $sqlDarkMode = "SELECT dark_mode FROM users_info WHERE id='$id'";
+    $sqlDarkMode = "SELECT dark_mode FROM admin_info WHERE id='$id'";
     $resultDarkMode = mysqli_query($conn, $sqlDarkMode);
     $rowDarkMode = mysqli_fetch_assoc($resultDarkMode);
     $darkModeFromDB = $rowDarkMode['dark_mode'];

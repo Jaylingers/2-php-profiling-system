@@ -13,30 +13,22 @@ if (isset($_POST['login'])) {
     $username = validate($_POST['username']);
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users_info WHERE username = '$username' and password = '$password'";
+    $sql = "SELECT * FROM admin_info WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
     $user_data = 'username=' . $username . '&password=' . $password;
-//    $hashedPasswordFromDatabase = $row['password'];
-//    $isPasswordCorrect = password_verify($password, $hashedPasswordFromDatabase);
-//    echo "<script> console.log('$isPasswordCorrect')</script>";
-//    echo "<script> console.log('$password')</script>";
+    $hashedPasswordFromDatabase = $row['password'];
+    $isPasswordCorrect = password_verify($password, $hashedPasswordFromDatabase);
 
-//    if ($isPasswordCorrect && $row) {
-    if ($row) {
+    if ($isPasswordCorrect && $row) {
         session_start();
         $_SESSION['user_type'] = $row['user_type'];
         $_SESSION['ids'] = $row['id'];
         $user_type = $row['user_type'];
         $id = $row['id'];
 
-//        $sqlInsertPageVisited = "insert into page_visited_info (user_id, date_visited) values ('$id', now())";
-//        mysqli_query($conn, $sqlInsertPageVisited);
-
-        if (strtolower($user_type) == 'user') {
-            header("Location: /2-php-profiling-system/page/home?id=" . $row['id']);
-        }
+        header("Location: /2-php-profiling-system/page/home?id=" . $row['id']);
     } else {
         header("Location: /2-php-profiling-system/?error=$user_data");
     }
@@ -60,7 +52,7 @@ if (isset($_SESSION['user_type'])) {
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="assets/img/mabes.png" />
+    <link rel="shortcut icon" href="assets/img/mabes.png"/>
     <title>GABI OFFICIAL WEBSITE</title>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link rel="stylesheet" href="assets/css/media.css"/>
